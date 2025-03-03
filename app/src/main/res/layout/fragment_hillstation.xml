@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:scrollbars="none"
+    android:fillViewport="true"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- CardView for Hillstation Details -->
+        <!-- This section displays a card with details about a hill station -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardMahabaleshwarHillStation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Image Section -->
+                <!-- Displays the image of the place -->
+                <ImageView
+                    android:id="@+id/imageSubcategory"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/mahabaleshwar" />
+
+                <!-- Details Section -->
+                <!-- Contains the title, description, and other details of the place -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/Place_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mahabaleshwar Hill Station"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/textDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textSize="12sp"
+                        android:text="Mahabaleshwar, Maharashtra, India"
+                        android:textColor="@color/black" />
+
+                    <!-- Charges -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textChargesLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Charges"
+                            android:textSize="12sp"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textCharges"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:textSize="12sp"
+                            android:text="Free"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <!-- Parking -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textParkingLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Parking Available"
+                            android:textSize="12sp"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textParking"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:textSize="12sp"
+                            android:text="Yes"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <!-- Buttons -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonViewDetails"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="VIEW IN DETAILS"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/primaryColor"
+                        app:icon="@drawable/ic_info"
+                        android:textSize="13sp"
+                        app:iconTint="@color/white"
+                        app:iconGravity="start" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Form Section -->
+        <!-- Contains input fields for adding place details -->
+
+        <!-- Place Title -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:hintEnabled="true"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Place Title"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Category Checkboxes -->
+        <!-- Allows the user to select categories -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="3"
+            android:layout_marginBottom="16dp">
+
+            <CheckBox
+                android:id="@+id/checkBoxHillStation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="Hill Station" />
+
+            <CheckBox
+                android:id="@+id/checkBoxBeach"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="Beach" />
+
+            <CheckBox
+                android:id="@+id/checkBoxHistorical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="Historical Site" />
+
+            <CheckBox
+                android:id="@+id/checkBoxForts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="Forts" />
+
+            <CheckBox
+                android:id="@+id/checkBoxWaterfalls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="Waterfalls" />
+
+            <CheckBox
+                android:id="@+id/checkBoxReligiousPlaces"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="Religious Places" />
+        </GridLayout>
+
+        <!-- Field: Place Address -->
+        <!-- Multi-line input field for entering the address of the place -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:hintEnabled="true"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Place Address"
+                android:inputType="textMultiLine"
+                android:gravity="top|start"
+                android:lines="3"
+                android:maxLines="5"
+                android:ellipsize="end" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Field: Place Features -->
+        <!-- Multi-line input field for listing features like Wifi, Guide, or Pet Friendly -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:hintEnabled="true"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextFeatures"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Place Features (e.g., Wifi, Guide, Pet Friendly)"
+                android:inputType="textMultiLine"
+                android:gravity="top|start"
+                android:lines="3"
+                android:maxLines="5"
+                android:ellipsize="end" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Field: Place Description -->
+        <!-- Multi-line input field for describing the place in detail -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:hintEnabled="true"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Place Description"
+                android:inputType="textMultiLine"
+                android:scrollbars="vertical"
+                android:gravity="top|start"
+                android:lines="5"
+                android:maxLines="10"
+                android:ellipsize="end"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Field: Parking Available -->
+        <!-- Input field to specify if parking is available (Yes/No) -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:hintEnabled="true"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextParkingAvailable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Parking Available (Yes/No)"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Field: Charges -->
+        <!-- Input field for entering the charges for the place -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:hintEnabled="true"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextCharges"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Charges"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- ProgressBar for Uploading -->
+        <!-- Displays a spinner while uploading details -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:indeterminate="true" />
+
+        <!-- Field: Place Special Rules -->
+        <!-- Multi-line input field for entering rules like no smoking, silence zones, etc. -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:hintEnabled="true"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextSpecialRules"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Special Rules (e.g., No Smoking, Silence Zones)"
+                android:inputType="textMultiLine"
+                android:gravity="top|start"
+                android:lines="3"
+                android:maxLines="5"
+                android:ellipsize="end" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Field: Place City -->
+        <!-- Input field for specifying the city of the place -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:hintEnabled="true"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Place City"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Section: Place Added By -->
+        <!-- Radio buttons to select if the place was added by Admin or Agency -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Place Added By"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupAddedBy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Admin"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/radioAgency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Agency"
+                android:textSize="14sp"
+                android:layout_marginStart="16dp" />
+        </RadioGroup>
+
+        <!-- Section: Image Upload Preview -->
+        <!-- ImageView to display the selected or uploaded image -->
+        <!-- Image View to display the selected image -->
+        <ImageView
+            android:id="@+id/imageViewUploaded"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_upload"/>
+
+
+        <!-- Button to upload image -->
+        <TextView
+            android:id="@+id/buttonUploadImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="Select Image"/>
+
+        <!-- Submit Button -->
+        <!-- Button to submit the form and upload the details -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonUpload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upload"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/primaryColor"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</ScrollView>
