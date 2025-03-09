@@ -105,29 +105,24 @@ public class HomeFragment extends Fragment {
     }
 
     private void fetchBookingsData() {
-        bookingsRef = FirebaseDatabase.getInstance().getReference("bookings");
-
         bookingsRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                bookingList.clear();
+                bookingList.clear(); // Clear existing list before adding new data
 
-                // First level: Iterate through all users
-                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
-                    // Second level: Iterate through all bookings under each user
-                    for (DataSnapshot bookingSnapshot : userSnapshot.getChildren()) {
+                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) { // Loop through users
+                    for (DataSnapshot bookingSnapshot : userSnapshot.getChildren()) { // Loop through bookings
                         Booking booking = bookingSnapshot.getValue(Booking.class);
                         if (booking != null) {
-                            // Set the user ID from the parent node
-                            booking.setUserId(userSnapshot.getKey());
+                            booking.setUserId(userSnapshot.getKey()); // Set the userId manually
                             bookingList.add(booking);
                         }
                     }
                 }
 
-                // Reverse to show latest bookings first
+                // Reverse list to show latest bookings first
                 Collections.reverse(bookingList);
-                bookingAdapter.notifyDataSetChanged();
+                bookingAdapter.notifyDataSetChanged(); // Update RecyclerView
             }
 
             @Override
@@ -136,4 +131,5 @@ public class HomeFragment extends Fragment {
             }
         });
     }
+
 }
