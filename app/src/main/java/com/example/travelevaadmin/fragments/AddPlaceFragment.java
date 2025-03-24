@@ -54,7 +54,7 @@ public class AddPlaceFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_add_place, container, false);
 
         // Initialize Firebase Database reference
-        databaseReference = FirebaseDatabase.getInstance().getReference("top_places");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Places_details");
 
         // Initialize UI components
         editTextTitle = view.findViewById(R.id.editTextTitle);
